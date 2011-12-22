@@ -1,6 +1,6 @@
-==========================
-ZenPacks.ZenSystems.DellUps
-==========================
+==============================
+ZenPacks.ZenSystems.olsonPower
+==============================
 
 
 Description

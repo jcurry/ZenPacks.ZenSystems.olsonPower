@@ -110,14 +110,14 @@ Change History
 
 Screenshots
 ===========
-|DellUpsBatteriesComponent|
+|olsonPower|
 
 
 .. External References Below. Nothing Below This Line Should Be Rendered
 
-.. _Latest Package for Python 2.6: https://github.com/jcurry/ZenPacks.ZenSystems.DellUps/blob/master/dist/ZenPacks.ZenSystems.olsonPower-1.2-py2.6.egg?raw=true
+.. _Latest Package for Python 2.6: https://github.com/jcurry/ZenPacks.ZenSystems.olsonPower/blob/master/dist/ZenPacks.ZenSystems.olsonPower-1.2-py2.6.egg?raw=true
 
-.. |DellUpsBatteriesComponent| image:: http://github.com/jcurry/ZenPacks.ZenSystems.olsonPower/raw/master/screenshots/olsonPower.jpg
+.. |olsonPower| image:: http://github.com/jcurry/ZenPacks.ZenSystems.olsonPower/raw/master/screenshots/olsonPower.jpg
 
                                                                         
 

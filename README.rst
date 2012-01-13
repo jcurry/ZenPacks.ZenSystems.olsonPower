@@ -63,6 +63,7 @@ Requirements & Dependencies
     * Zenoss Versions Supported: 3.0
     * External Dependencies: The Olson-9016-V01 MIB needs to be available on target devices 
     * ZenPack Dependencies:
+    * Note that the standard device class /Power needs to exist.  If not, recreate it.
     * Installation Notes: zenhub and zopectl restart after installing this ZenPack.
     * Configuration: 
 

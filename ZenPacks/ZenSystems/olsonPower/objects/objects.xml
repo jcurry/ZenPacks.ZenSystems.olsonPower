@@ -12,7 +12,7 @@ Olson PDU power monitor
 ['OlsonNewDeviceMap', 'OlsonPowerMap']
 </property>
 <property visible="True" type="lines" id="zDeviceTemplates" >
-['Device', 'olson_power', 'olson_power_days']
+['Device', 'olson_power']
 </property>
 <property visible="True" type="string" id="zSnmpVer" >
 v1
@@ -21,11 +21,6 @@ v1
 &lt;a href='http://${here/manageIp}' target='_'&gt;Console: ${here/id}&lt;/a&gt;
 </property>
 <tomanycont id='rrdTemplates'>
-<object id='manual' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
-<property type="string" id="targetPythonClass" mode="w" >
-Products.ZenModel.Device
-</property>
-</object>
 <object id='olson_power' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
 <property type="string" id="targetPythonClass" mode="w" >
 Products.ZenModel.Device
@@ -397,118 +392,6 @@ AVERAGE
 </object>
 </tomanycont>
 </object>
-<object id='olson_power_days' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
-<property type="string" id="targetPythonClass" mode="w" >
-Products.ZenModel.Device
-</property>
-<tomanycont id='datasources'>
-<object id='olson_energy_days' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
-<property id='zendoc' type='string'>
-sample every day; detailed data kept 1 year; consolidated to weekly kept for 10 years
-</property>
-<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
-COMMAND
-</property>
-<property type="boolean" id="enabled" mode="w" >
-True
-</property>
-<property type="string" id="eventClass" mode="w" >
-/Cmd/Fail
-</property>
-<property type="int" id="severity" mode="w" >
-3
-</property>
-<property type="string" id="commandTemplate" mode="w" >
-${here/ZenPackManager/packs/ZenPacks.ZenSystems.olsonPower/path}/lib/getJustEnergy.sh ${here/manageIp} ${here/zSnmpCommunity} ${here/zSnmpVer}
-</property>
-<property type="int" id="cycletime" mode="w" >
-86400
-</property>
-<property type="boolean" id="usessh" mode="w" >
-False
-</property>
-<property type="string" id="parser" mode="w" >
-Auto
-</property>
-<tomanycont id='datapoints'>
-<object id='energy_days' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
-<property id='zendoc' type='string'>
-sample every day; detailed data kept 1 year; consolidated to weekly kept for 10 years
-</property>
-<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
-GAUGE
-</property>
-<property type="text" id="createCmd" mode="w" >
-RRA:LAST:0.5:1:366
-RRA:LAST:0.5:7:520
-</property>
-<property type="boolean" id="isrow" mode="w" >
-True
-</property>
-<property type="string" id="description" mode="w" >
-sample every day; detailed data kept 1 year; consolidated to weekly kept for 10 years
-</property>
-</object>
-</tomanycont>
-</object>
-</tomanycont>
-<tomanycont id='graphDefs'>
-<object id='energy_days' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
-<property type="int" id="height" mode="w" >
-100
-</property>
-<property type="int" id="width" mode="w" >
-500
-</property>
-<property type="string" id="units" mode="w" >
-kWh
-</property>
-<property type="boolean" id="log" mode="w" >
-False
-</property>
-<property type="boolean" id="base" mode="w" >
-False
-</property>
-<property type="int" id="miny" mode="w" >
--1
-</property>
-<property type="int" id="maxy" mode="w" >
--1
-</property>
-<property type="boolean" id="hasSummary" mode="w" >
-True
-</property>
-<tomanycont id='graphPoints'>
-<object id='energy_days_energy_days' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
-<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
-LINE
-</property>
-<property type="long" id="lineWidth" mode="w" >
-1
-</property>
-<property type="boolean" id="stacked" mode="w" >
-False
-</property>
-<property type="string" id="format" mode="w" >
-%5.2lf%s
-</property>
-<property type="string" id="legend" mode="w" >
-${graphPoint/id}
-</property>
-<property type="long" id="limit" mode="w" >
--1
-</property>
-<property type="string" id="dpName" mode="w" >
-olson_energy_days_energy_days
-</property>
-<property type="string" id="cFunc" mode="w" >
-AVERAGE
-</property>
-</object>
-</tomanycont>
-</object>
-</tomanycont>
-</object>
 </tomanycont>
 </object>
 <!-- ('', 'zport', 'dmd', 'Events', 'Power') -->
@@ -621,6 +504,22 @@ HA7 1JY
 <property type="string" id="country" mode="w" >
 UK
 </property>
+<tomanycont id='products'>
+<object id='1.11' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
+<property type="string" id="name" mode="w" >
+1.11
+</property>
+<property type="lines" id="productKeys" mode="w" >
+['1.11']
+</property>
+<property type="boolean" id="isOS" mode="w" >
+False
+</property>
+<tomany id='instances'>
+<link objid='/zport/dmd/Devices/Power/Olson/devices/212.60.99.121/os'/>
+</tomany>
+</object>
+</tomanycont>
 </object>
 <!-- ('', 'zport', 'dmd', 'Mibs', 'mibs', 'Olson-9016-V01') -->
 <object id='/zport/dmd/Mibs/mibs/Olson-9016-V01' module='Products.ZenModel.MibModule' class='MibModule'>

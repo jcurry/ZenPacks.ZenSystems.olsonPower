@@ -5,7 +5,7 @@
 NAME = "ZenPacks.ZenSystems.olsonPower"
 VERSION = "1.3"
 AUTHOR = "Jane Curry"
-LICENSE = ""
+LICENSE = "GPLv2"
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.ZenSystems']
 PACKAGES = ['ZenPacks', 'ZenPacks.ZenSystems', 'ZenPacks.ZenSystems.olsonPower']
 INSTALL_REQUIRES = []

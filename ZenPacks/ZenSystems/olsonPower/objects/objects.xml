@@ -132,6 +132,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='current' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -189,6 +192,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='energy' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -246,6 +252,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='power' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -306,6 +315,9 @@ True
 </property>
 <tomanycont id='graphPoints'>
 <object id='temp' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -361,8 +373,14 @@ False
 <property type="boolean" id="hasSummary" mode="w" >
 True
 </property>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <tomanycont id='graphPoints'>
 <object id='voltage' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+0
+</property>
 <property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
 LINE
 </property>
@@ -504,6 +522,9 @@ HA7 1JY
 <property type="string" id="country" mode="w" >
 UK
 </property>
+<property type="lines" id="regexes" mode="w" >
+()
+</property>
 <tomanycont id='products'>
 <object id='1.11' module='Products.ZenModel.SoftwareClass' class='SoftwareClass'>
 <property type="string" id="name" mode="w" >
@@ -515,9 +536,6 @@ UK
 <property type="boolean" id="isOS" mode="w" >
 False
 </property>
-<tomany id='instances'>
-<link objid='/zport/dmd/Devices/Power/Olson/devices/212.60.99.121/os'/>
-</tomany>
 </object>
 </tomanycont>
 </object>
